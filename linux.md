@@ -5,6 +5,7 @@
 * [Commands](#commands)
   * [Get last lines of file](#get-last-lines-of-file)
 * [Directory structure](#directory-structure)
+* [Network services](#network-services)
 
 ## Commands
 
@@ -44,3 +45,23 @@ tail <file>
 * `/tmp` temporary files. They will be deleted.
 * `/usr` user's programs.
 * `/var` variables files, like logs.
+
+## Network services
+
+```bash
+systemctl <command> <service>
+```
+
+Administrator rights needed.
+
+### Commands
+
+* `start`
+* `stop`
+* `restart`
+* `enable`
+* `disable`
+
+### Services
+
+Docker, etc...
