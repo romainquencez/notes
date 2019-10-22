@@ -6,3 +6,4 @@ useful notes about linux, python, django...
 * [Django](django.md)
 * [Linux](linux.md)
 * [Vim](vim.md)
+* [Nginx](nginx.md)
