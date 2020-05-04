@@ -17,7 +17,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 Create a symbolic link between available and enabled sites:
 ```bash
-ln -s /etc/nginx/sites-available/[sitename] /etc/nginx/sites-enabled/[sitename]
+ln -s /etc/nginx/sites-available/[sitename] /etc/nginx/sites-enabled/
 ```
 This way, any modification in sites-available config file will be linked to sites-enabled.
 
