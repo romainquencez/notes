@@ -1,3 +1,3 @@
 # Notes
 
-Documentation sur https://romainquencez.github.io
+Documentation sur https://romainquencez.github.io/notes/
