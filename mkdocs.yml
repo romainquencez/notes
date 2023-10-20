@@ -2,8 +2,8 @@ site_name: Notes
 site_description: 'Notes de développement'
 site_author: 'Romain Quencez'
 docs_dir: docs/
-repo_name: 'romainquencez/notes'
-repo_url: 'https://github.com/romainquencez/notes'
+repo_name: 'romainquencez/romainquencez.github.io'
+repo_url: 'https://github.com/romainquencez/romainquencez.github.io'
 nav:
     - Accueil: index.md
     - Django: django.md
