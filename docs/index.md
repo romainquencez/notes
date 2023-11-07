@@ -25,6 +25,10 @@
 * [Analyser le comportement réseau pour améliorer FCP et LCP](https://www.julienpradet.fr/tutoriels/reseau-et-core-web-vitals/)
 * [OKLCH in CSS: why we moved from RGB and HSL](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
 
+## Git
+
+* [git rebase: what can go wrong?](https://jvns.ca/blog/2023/11/06/rebasing-what-can-go-wrong-/)
+
 ## PostgreSQL
 
 * [Explaining The Postgres Meme](https://avestura.dev/blog/explaining-the-postgres-meme)
