@@ -7,6 +7,10 @@
 * [Keycloak](keycloak.md)
 * [Git](git.md)
 
+## Général
+
+* [On the Importance of Naming in Programming](https://wasp-lang.dev/blog/2023/10/12/on-importance-of-naming-in-programming)
+
 ## Architecture logicielle
 
 * [The Twelve-Factor App](https://www.12factor.net/)
