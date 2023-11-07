@@ -5,6 +5,7 @@
 * [Django](django.md)
 * [Linux](linux.md)
 * [Keycloak](keycloak.md)
+* [Git](git.md)
 
 ## Architecture logicielle
 
