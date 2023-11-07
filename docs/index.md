@@ -2,6 +2,7 @@
 
 ## Table of contents
 
+* [Documentations](documentations.md)
 * [Django](django.md)
 * [Linux](linux.md)
 * [Keycloak](keycloak.md)
