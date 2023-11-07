@@ -11,6 +11,7 @@
 
 * [The Twelve-Factor App](https://www.12factor.net/)
 * [Tips for analyzing logs](https://jvns.ca/blog/2022/12/07/tips-for-analyzing-logs/)
+* [The Architecture Behind A One-Person Tech Startup](https://anthonynsimon.com/blog/one-man-saas-architecture/)
 
 ## Frontend
 
