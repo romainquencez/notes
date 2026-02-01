@@ -458,31 +458,31 @@
 <h1 id="git">Git</h1>
 <h2 id="commandes-utiles">Commandes utiles</h2>
 <h3 id="diff">Diff</h3>
-<pre><code class="language-sh">git diff
-</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>diff
+</span></code></pre></div>
 <h3 id="lister-les-fichiers-dun-commit">Lister les fichiers d'un commit</h3>
-<pre><code class="language-sh">git show --name-only
-</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>show<span class="w"> </span>--name-only
+</span></code></pre></div>
 <p>Exemple :</p>
-<pre><code class="language-sh">commit 44e20c2a834415f760c46ad9a2ece15232fb6116 (HEAD -&gt; appbg, tag: v0.0.40, origin/master, origin/HEAD, master)
-Author: Romain Quencez &lt;34655643+romainquencez@users.noreply.github.com&gt;
-Date:   Mon Nov 6 08:57:04 2023 +0100
-
-    Front - Ajoute la balise meta theme-color
-
-services/frontend/index.html
-</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>commit<span class="w"> </span>44e20c2a834415f760c46ad9a2ece15232fb6116<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>appbg,<span class="w"> </span>tag:<span class="w"> </span>v0.0.40,<span class="w"> </span>origin/master,<span class="w"> </span>origin/HEAD,<span class="w"> </span>master<span class="o">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Author:<span class="w"> </span>Romain<span class="w"> </span>Quencez<span class="w"> </span>&lt;<span class="m">34655643</span>+romainquencez@users.noreply.github.com&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Date:<span class="w">   </span>Mon<span class="w"> </span>Nov<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">08</span>:57:04<span class="w"> </span><span class="m">2023</span><span class="w"> </span>+0100
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>Front<span class="w"> </span>-<span class="w"> </span>Ajoute<span class="w"> </span>la<span class="w"> </span>balise<span class="w"> </span>meta<span class="w"> </span>theme-color
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>services/frontend/index.html
+</span></code></pre></div>
 <h3 id="log-detaille">Log détaillé</h3>
-<pre><code class="language-sh">git log --all --graph --oneline --decorate
-</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>log<span class="w"> </span>--all<span class="w"> </span>--graph<span class="w"> </span>--oneline<span class="w"> </span>--decorate
+</span></code></pre></div>
 <p>Exemple :</p>
-<pre><code class="language-sh">* 73acb23 (HEAD -&gt; fix-exploitations, origin/fix-exploitations) Exploitations - Fix l'affichage en mobile
-* 76a1e2b (origin/master, origin/HEAD, master) GitHub - Ajoute le déploiement au push de tag
-| * 001a478 (origin/deploy, deploy) GitHub - Ajoute le déploiement au push de tag
-|/
-* c09a97c Front - Corrige le nom de l'env
-* 02d0e97 Front - Ajoute l'intégration Sentry
-</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>*<span class="w"> </span>73acb23<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>fix-exploitations,<span class="w"> </span>origin/fix-exploitations<span class="o">)</span><span class="w"> </span>Exploitations<span class="w"> </span>-<span class="w"> </span>Fix<span class="w"> </span>l<span class="s1">&#39;affichage en mobile</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="s1">* 76a1e2b (origin/master, origin/HEAD, master) GitHub - Ajoute le déploiement au push de tag</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="s1">| * 001a478 (origin/deploy, deploy) GitHub - Ajoute le déploiement au push de tag</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="s1">|/</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="s1">* c09a97c Front - Corrige le nom de l&#39;</span>env
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>*<span class="w"> </span>02d0e97<span class="w"> </span>Front<span class="w"> </span>-<span class="w"> </span>Ajoute<span class="w"> </span>l<span class="err">&#39;</span>intégration<span class="w"> </span>Sentry
+</span></code></pre></div>
 <h2 id="liens-utiles">Liens utiles</h2>
 <ul>
 <li><a href="https://git-scm.com/docs">Documentation de Git</a></li>
@@ -536,7 +536,7 @@ services/frontend/index.html
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
