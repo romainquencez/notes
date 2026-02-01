@@ -6,6 +6,8 @@ repo_name: 'romainquencez/notes'
 repo_url: 'https://github.com/romainquencez/notes/'
 nav:
     - Accueil: index.md
+    - PHP: php.md
+    - Symfony: symfony.md
     - Django: django.md
     - Linux: linux.md
 theme:
