@@ -1,36 +1,48 @@
-name: Deploy Docs
+name: Build GitHub Pages
 
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  build-deploy:
-    name: Build and deploy docs
-
+  build_mkdocs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout code
         uses: actions/checkout@v6
-
-      - name: Set up Python 3 ⚙️ 🐍
-        uses: actions/setup-python@v6
-
-      - name: Cache dependencies 💾
-        uses: actions/cache@v5
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('docs/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: 3.14
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --config-file mkdocs.yml --force
 
-      - name: Install dependencies 🔧
-        working-directory: docs
-        run: make install
-
-      - name: Build and deploy to GitHub Pages 🏗️ 🚀
-        working-directory: docs
-        run: make deploy
+  deploy_mkdocs:
+    needs: build_mkdocs
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
