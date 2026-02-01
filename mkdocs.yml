@@ -13,6 +13,7 @@ nav:
   - Keycloak: keycloak.md
 theme:
   name: 'material'
+  language: fr
   features:
     - content.code.copy
 markdown_extensions:
