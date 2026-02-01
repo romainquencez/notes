@@ -1,0 +1,1157 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes de développement">
+      
+      
+        <meta name="author" content="Romain Quencez">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../symfony/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>PHP - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#php" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PHP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/romainquencez/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    romainquencez/notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/romainquencez/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    romainquencez/notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntaxe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntaxe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operateur-de-controle-derreur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opérateur de contrôle d'erreur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operateurs-fonctionnels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opérateurs fonctionnels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-flechees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonctions fléchées
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables globales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-statiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables statiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-dynamiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables dynamiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-superglobales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables superglobales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructeur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstraction-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstraction de classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Énumérations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-de-classes-relatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types de classes relatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-cast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type cast
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonctions utiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symfony/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Symfony
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../django/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Django
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntaxe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntaxe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operateur-de-controle-derreur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opérateur de contrôle d'erreur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operateurs-fonctionnels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opérateurs fonctionnels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-flechees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonctions fléchées
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables globales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-statiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables statiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-dynamiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables dynamiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-superglobales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables superglobales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructeur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstraction-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstraction de classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Énumérations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-de-classes-relatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types de classes relatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-cast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type cast
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonctions utiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="php">PHP</h1>
+<h2 id="syntaxe">Syntaxe</h2>
+<p>PHP inclut également la balise courte echo &lt;?=, qui est un raccourci pour &lt;?php echo.</p>
+<pre><code class="language-php">Vous pouvez utiliser la balise courte pour &lt;?= 'écrire ce texte' ?&gt;.
+Est équivalent à &lt;?php echo 'écrire ce texte' ?&gt;.
+</code></pre>
+<p>Pour assigner par référence, ajoutez simplement un &amp; (ET commercial) au début de la variable qui est assignée (la variable source).</p>
+<pre><code class="language-php">$foo = 'Pierre';              // Assigne la valeur 'Pierre' à $foo
+$bar = &amp;$foo;                 // Référence $foo avec $bar.
+</code></pre>
+<h3 id="operateur-de-controle-derreur">Opérateur de contrôle d'erreur</h3>
+<p>PHP supporte un opérateur de contrôle d'erreur : l'arobase (@). Lorsque cet opérateur est ajouté en préfixe d'une expression PHP, les diagnostics d'erreurs qui peuvent être générés par cette expression seront ignorés.</p>
+<pre><code class="language-php">$value = @$cache[$key];
+// la ligne ci-dessus n'affichera pas d'alerte si la clé $key du tableau n'existe pas
+</code></pre>
+<h3 id="operateurs-fonctionnels">Opérateurs fonctionnels</h3>
+<p>L'opérateur <code>|&gt;</code>, ou « pipe », accepte une fonction callable à un seul paramètre à droite et lui transmet la valeur de gauche, le résultat étant la valeur renvoyée par la fonction callable.</p>
+<pre><code class="language-php">$result = &quot;PHP Rocks&quot;
+    |&gt; htmlentities(...)
+    |&gt; str_split(...)
+    |&gt; (fn($x) =&gt; array_map(strtoupper(...), $x))
+    |&gt; (fn($x) =&gt; array_filter($x, fn($v) =&gt; $v != 'O'))
+;
+</code></pre>
+<h3 id="fonctions-flechees">Fonctions fléchées</h3>
+<p>Les fonctions fléchées supportent les mêmes fonctionnalités que les fonctions anonymes, à l'exception que l'utilisation des variables de la portée parente est automatique.</p>
+<pre><code class="language-php">$fn1 = fn($x) =&gt; $x + $y;
+</code></pre>
+<h3 id="variables-globales">Variables globales</h3>
+<p>Le mot-clé global est utilisé pour lier une variable de la portée globale dans une portée locale. Une deuxième méthode pour accéder aux variables globales est d'utiliser le tableau associatif pré-défini <code>$GLOBALS</code>.</p>
+<pre><code class="language-php">$a = 1;
+$b = 2;
+function somme() {
+    global $a, $b;
+    $b = $a + $b;
+}
+somme();
+echo $b;
+</code></pre>
+<h3 id="variables-statiques">Variables statiques</h3>
+<p>Une variable statique a une portée locale uniquement, mais elle ne perd pas sa valeur lorsque le script appelle la fonction.</p>
+<pre><code class="language-php">function test()
+{
+    static $a = 0;
+    echo $a;
+    $a++;
+}
+</code></pre>
+<p>Maintenant, la variable $a est initialisée uniquement lors du premier appel à la fonction et, à chaque fois que la fonction test() est appelée, elle affichera une valeur de $a incrémentée de 1.</p>
+<h3 id="variables-dynamiques">Variables dynamiques</h3>
+<p>Une variable dynamique prend la valeur d'une variable et l'utilise comme nom d'une autre variable.</p>
+<pre><code class="language-php">$a = 'bonjour';             // $a avec comme valeur &quot;bonjour&quot;
+$$a = 'monde';              // $bonjour avec comme valeur &quot;monde&quot;
+</code></pre>
+<h2 id="variables-superglobales">Variables superglobales</h2>
+<p>Les variables internes qui sont toujours disponibles, quel que soit le contexte.</p>
+<ul>
+<li><code>$GLOBALS</code> : Référence toutes les variables disponibles dans un contexte global</li>
+<li><code>$_SERVER</code> : Variables de serveur et d'exécution</li>
+<li><code>$_GET</code> : Variables de chaîne de requête</li>
+<li><code>$_POST</code> : Données de formulaire depuis des requêtes HTTP POST</li>
+<li><code>$_FILES</code> : Variable de téléchargement de fichier via HTTP</li>
+<li><code>$_COOKIE</code> : Cookies HTTP</li>
+<li><code>$_SESSION</code> : Variables de session</li>
+<li><code>$_REQUEST</code> : Variables de requête HTTP</li>
+<li><code>$_ENV</code> : Variables d'environnement</li>
+</ul>
+<p>https://www.php.net/manual/fr/language.variables.superglobals.php</p>
+<h2 id="classes">Classes</h2>
+<pre><code class="language-php">class SimpleClass
+{
+    // déclaration d'une propriété
+    public $var = 'une valeur par défaut';
+
+    // déclaration des méthodes
+    public function displayVar() {
+        echo $this-&gt;var;
+    }
+}
+</code></pre>
+<p>La pseudo-variable <code>$this</code> est disponible lorsqu'une méthode est appelée depuis un contexte objet. <code>$this</code> est la valeur de l'objet appelant.</p>
+<p>es méthodes et propriétés peuvent aussi être accédés avec l'opérateur "nullsafe": ?-&gt;</p>
+<pre><code class="language-php">$result = $repository?-&gt;getUser(5)?-&gt;name;
+</code></pre>
+<p>Le mot-clé <code>final</code> empêche les classes enfants de redéfinir une méthode, une propriété ou constante en préfixant la définition avec <code>final</code>. Si la classe elle-même est définie comme finale, elle ne pourra pas être étendue.</p>
+<pre><code class="language-php">class BaseClass {
+   public function test() {
+       echo &quot;BaseClass::test() appelée\n&quot;;
+   }
+
+   final public function moreTesting() {
+       echo &quot;BaseClass::moreTesting() appelée\n&quot;;
+   }
+}
+</code></pre>
+<h3 id="constructeur">Constructeur</h3>
+<p>PHP permet aux développeurs de déclarer des constructeurs pour les classes. Les classes qui possèdent une méthode constructeur appellent cette méthode à chaque création d'une nouvelle instance de l'objet, ce qui est intéressant pour toutes les initialisations dont l'objet a besoin avant d'être utilisé.</p>
+<pre><code class="language-php">class BaseClass {
+    function __construct() {
+        print &quot;Dans le constructeur de BaseClass\n&quot;;
+    }
+}
+</code></pre>
+<h3 id="abstraction-de-classes">Abstraction de classes</h3>
+<p>PHP a des classes, méthodes et propriétés abstraites. Les classes définies comme abstraites ne peuvent pas être instanciées, et toute classe contenant au moins une méthode abstraite doit elle-aussi être abstraite.</p>
+<pre><code class="language-php">abstract class AbstractClass 
+{
+    // Force les classes filles à définir cette méthode
+    abstract protected function getValue();
+    abstract protected function prefixValue($prefix);
+
+    // méthode commune
+   public function printOut()
+   {
+        print $this-&gt;getValue() . &quot;\n&quot;;
+   }
+}
+</code></pre>
+<h2 id="enumerations">Énumérations</h2>
+<pre><code class="language-php">enum Suit
+{
+    case Hearts;
+    case Diamonds;
+    case Clubs;
+    case Spades;
+}
+</code></pre>
+<h2 id="interfaces">Interfaces</h2>
+<p>Les interfaces d'objets permettent de créer du code qui spécifie quelles méthodes et propriétés une classe doit implémenter, sans avoir à définir comment ces méthodes ou propriétés sont implémentées.</p>
+<pre><code class="language-php">interface I
+{
+    // Une classe implémentant cette interface DOIT avoir une propriété publiquement lisible,
+    // mais que celle-ci soit ou non modifiable publiquement n'est pas restreint.
+    public string $readable { get; }
+
+    // Une classe implémentant cette interface DOIT avoir une propriété publiquement modifiable,
+    // mais que celle-ci soit ou non lisible publiquement n'est pas restreint.
+    public string $writeable { set; }
+
+    // Une classe implémentant cette interface DOIT avoir une propriété qui est à la fois publiquement
+    // lisible et publiquement modifiable.
+    public string $both { get; set; }
+}
+</code></pre>
+<h3 id="traits">Traits</h3>
+<p>Les traits sont un mécanisme de réutilisation de code dans un langage à héritage simple tel que PHP.</p>
+<pre><code class="language-php">trait TraitA {
+    public function sayHello() {
+        echo 'Hello';
+    }
+}
+
+class MyHelloWorld
+{
+    use TraitA;
+
+    public function sayHelloWorld() {
+        $this-&gt;sayHello();
+        echo &quot;!\n&quot;;
+    }
+}
+</code></pre>
+<h2 id="types">Types</h2>
+<p>En PHP, chaque expression a l'un des types intégrés suivants en fonction de sa valeur:</p>
+<ul>
+<li><code>null</code> : Le type null est le type unité de PHP, c'est-à-dire qu'il n'a qu'une seule valeur: <code>null</code>.</li>
+<li><code>bool</code> : Le type bool ne possède que deux valeurs, et est utilisé pour exprimer une valeur de vérité. Il peut être soit <code>true</code> soit <code>false</code>.</li>
+<li><code>int</code> : Un entier est un nombre appartenant à l'ensemble ℤ = {..., -2, -1, 0, 1, 2, ...}.</li>
+<li><code>float</code> : nombre à virgule flottante</li>
+<li><code>string</code></li>
+<li><code>array</code> =&gt; <code>dict</code></li>
+<li><code>object</code></li>
+<li><code>callable</code></li>
+<li><code>resource</code></li>
+<li><code>mixed</code> : accepte toutes les valeurs</li>
+<li><code>void</code> : est une déclaration de type de retour uniquement, indiquant que la fonction ne retourne pas de valeur, mais que la fonction peut quand même se terminer.</li>
+<li><code>never</code> : never est uniquement un type de retour indiquant que la fonction ne se termine pas.</li>
+</ul>
+<h3 id="types-de-classes-relatives">Types de classes relatives</h3>
+<ul>
+<li><code>self</code> : La valeur doit être une instance de la même classe que celle dans laquelle la déclaration de type est utilisée.</li>
+<li><code>parent</code> : La valeur doit être une instance d'un parent de la classe dans laquelle la déclaration de type est utilisée.</li>
+<li><code>static</code> : static est un type de retour uniquement qui exige que la valeur retournée soit une instance de la même classe que celle sur laquelle la méthode est appelée.</li>
+</ul>
+<h3 id="type-cast">Type cast</h3>
+<p>Le casting de type converti la valeur à un type donnée en écrivant le type entre parenthèse avant la valeur à convertir.</p>
+<ul>
+<li><code>(int)</code> - cast en int</li>
+<li><code>(bool)</code> - cast en bool</li>
+<li><code>(float)</code> - cast en float</li>
+<li><code>(string)</code> - cast en string</li>
+<li><code>(array)</code> - cast en array</li>
+<li><code>(object)</code> - cast en object</li>
+<li><code>(unset)</code> - cast en NULL</li>
+</ul>
+<h2 id="fonctions-utiles">Fonctions utiles</h2>
+<ul>
+<li><code>array_filter</code> : Filtre les éléments d'un tableau grâce à une fonction de rappel</li>
+<li><code>array_find</code> : Retourne le premier élément validant la fonction de rappel</li>
+<li><code>array_map</code> : Applique une fonction sur les éléments d'un tableau</li>
+<li><code>explode</code> : Scinde une chaîne de caractères en segments</li>
+<li><code>htmlspecialchars</code> : Convertit les caractères spéciaux en entités HTML</li>
+<li><code>is_null</code> : Indique si une variable vaut null</li>
+<li><code>isset</code> : Détermine si une variable est déclarée et est différente de null</li>
+<li><code>nl2br</code> : Insère un retour à la ligne HTML à chaque nouvelle ligne</li>
+<li><code>str_contains</code> : Détermine si une chaîne contient une sous-chaîne donnée</li>
+<li><code>urlencode</code> : Encode une chaîne en URL</li>
+<li><code>var_dump</code> : Affiche les informations d'une variable</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
