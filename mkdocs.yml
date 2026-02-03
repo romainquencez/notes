@@ -8,6 +8,7 @@ nav:
   - Accueil: index.md
   - git: git.md
   - PHP: php.md
+  - Propel: propel.md
   - Symfony: symfony.md
   - Linux: linux.md
   - Keycloak: keycloak.md
