@@ -1,5 +1,23 @@
 # Thelia
 
+## Routes
+
+### Ajouter une route
+
+Ajouter une entrée dans le fichier XML dans `Config/routing` avec un id, le path de la route et le chemin du controlleur :
+
+```xml
+<route id="admin.customer.list" path="/admin/customers">
+  <default key="_controller">ApyMyBox\Controller\ApyCustomerController::renderApyCustomerList</default>
+</route>
+```
+
+Daus un template un lien vers la route pourra être créé :
+
+```html
+<a href="{url route_id='admin.customer.list' router='apymybox'}">Lien</a>
+```
+
 ## Commandes
 
 [Doc](https://doc.thelia.net/docs/commands)
