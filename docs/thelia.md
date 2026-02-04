@@ -1,5 +1,15 @@
 # Thelia
 
+## Commandes
+
+https://doc.thelia.net/docs/commands
+
+Lister les commandes existantes (dans le conteneur PHP) :
+
+```
+php Thelia
+```
+
 ## Loops
 
 https://doc.thelia.net/docs/loops
