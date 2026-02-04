@@ -45,7 +45,7 @@ Permet de lister et filtrer une collection d'instances de modèles dans un templ
 ```
 
 - `name`: nom unique dans le template
-- `type`: nom de la classe Loop à utiliser (ici `ApyCustomerLoop`)
+- `type`: nom de la classe Loop à utiliser (déclaré dans `config.xml`)
 
 On peut ajouter une condition en amont pour ne pas afficher un tableau vide si il n'y a pas de résultats par exemple :
 
@@ -66,6 +66,12 @@ Elle doit implémenter obligatoirement 3 fonctions :
 - `getArgDefinitions` : décrit les arguments (requis ou optionels, et types) de la loop.
 - `buildModelCriteria` : crée la requête Propel avec les différents filtres, jointures etc... qui va retourner la collection d'objets.
 - `parseResults` : crée les variables disponibles dans le template depuis les résultats de la requête.
+
+Déclarer la loop dans  `config.xml` dans l'attribut `loops` avec son nom unique et le chemin vers la classe :
+
+```xml
+<loop name="apy_customers" class="ApyMyBox\Loop\ApyCustomerLoop"/>
+```
 
 ### Exemple
 
