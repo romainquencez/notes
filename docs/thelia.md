@@ -44,6 +44,9 @@ Permet de lister et filtrer une collection d'instances de modèles dans un templ
 </table>
 ```
 
+- `name`: nom unique dans le template
+- `type`: nom de la classe Loop à utiliser (ici `ApyCustomerLoop`)
+
 On peut ajouter une condition en amont pour ne pas afficher un tableau vide si il n'y a pas de résultats par exemple :
 
 ```html
