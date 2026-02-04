@@ -2,7 +2,7 @@
 
 ## Commandes
 
-https://doc.thelia.net/docs/commands
+[Doc](https://doc.thelia.net/docs/commands)
 
 Lister les commandes existantes (dans le conteneur PHP) :
 
@@ -12,7 +12,7 @@ php Thelia
 
 ## Loops
 
-https://doc.thelia.net/docs/loops
+[Doc](https://doc.thelia.net/docs/loops)
 
 Permet de lister et filtrer une collection d'instances de modèles dans un template.
 
