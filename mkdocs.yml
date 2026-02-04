@@ -16,6 +16,7 @@ nav:
 theme:
   name: readthedocs
   locale: fr
+  prev_next_buttons_location: none
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
